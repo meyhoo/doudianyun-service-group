@@ -18,4 +18,13 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.jinritemai</groupId>
+            <artifactId>sdk-java</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../lib/boe-doudian-sdk-java-1.1.0-20220722165329.jar</systemPath>
+        </dependency>
+    </dependencies>
 </project>

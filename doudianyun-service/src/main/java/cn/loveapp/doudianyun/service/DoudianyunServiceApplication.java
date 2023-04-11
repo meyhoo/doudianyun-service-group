@@ -1,5 +1,6 @@
 package cn.loveapp.doudianyun.service;
 
+import cn.loveapp.doudianyun.common.constant.ActiveProfileConstant;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,8 +20,14 @@ public class DoudianyunServiceApplication {
     public static void main(String[] args) {
         initProfiles();
         defaultProfile();
+        saveProfile();
         SpringApplication app = new SpringApplication(DoudianyunServiceApplication.class);
         app.run(args);
+    }
+
+    private static void saveProfile() {
+        String activeProfile = System.getProperty("spring.profiles.active");
+        ActiveProfileConstant.ACTIVE_PROFILE = activeProfile;
     }
 
     private static void defaultProfile() {
